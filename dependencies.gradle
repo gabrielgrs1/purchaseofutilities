@@ -73,16 +73,9 @@ ext {
             koinViewModel: "org.koin:koin-androidx-viewmodel:$KoinVersion"
     ]
 
-    persistenceDependencies = [
-            roomRuntime : "androidx.room:room-runtime:$RoomVersion",
-            roomCompiler: "androidx.room:room-compiler:$RoomVersion",
-            dbDebug     : "com.amitshekhar.android:debug-db:$DbDebugVersion"
-    ]
-
     rxDependencies = [
             rxJava   : "io.reactivex.rxjava2:rxjava:$RxJavaVersion",
-            rxAndroid: "io.reactivex.rxjava2:rxandroid:$RxAndroidVersion",
-            rxRoom   : "androidx.room:room-rxjava2:$RoomVersion"
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$RxAndroidVersion"
     ]
 
 }

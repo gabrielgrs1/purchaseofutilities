@@ -1,0 +1,3 @@
+package com.gabrielgrs1.purchaseofutilities.core.plataform
+
+interface BaseRequestValues

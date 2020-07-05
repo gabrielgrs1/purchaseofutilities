@@ -9,7 +9,6 @@ HashMap<String, String> otherDependencies = rootProject.ext.otherDependencies
 HashMap<String, String> viewDependencies = rootProject.ext.viewDependencies
 HashMap<String, String> dependencyInjectionDependencies = rootProject.ext.dependencyInjectionDependencies
 HashMap<String, String> rxDependencies = rootProject.ext.rxDependencies
-HashMap<String, String> persistenceDependencies = rootProject.ext.persistenceDependencies
 
 android {
     dataBinding {
@@ -85,14 +84,8 @@ dependencies {
     implementation dependencyInjectionDependencies.koinCore
     implementation dependencyInjectionDependencies.koinViewModel
 
-    // Persistence Dependencies
-    implementation persistenceDependencies.roomRuntime
-    kapt persistenceDependencies.roomCompiler
-    debugImplementation persistenceDependencies.dbDebug
-
     // Rx Dependencies
     implementation rxDependencies.rxJava
     implementation rxDependencies.rxAndroid
-    implementation rxDependencies.rxRoom
 
 }

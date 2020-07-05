@@ -2,7 +2,7 @@ package com.gabrielgrs1.purchaseofutilities.data.api.model.response
 
 import com.google.gson.annotations.SerializedName
 
-data class CartResponse(
+data class CartItemResponse(
     @SerializedName("name") val name: String,
     @SerializedName("quantity") val quantity: Int,
     @SerializedName("stock") val stock: Int,

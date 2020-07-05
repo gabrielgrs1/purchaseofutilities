@@ -1,13 +1,12 @@
-package com.gabrielgrs1.purchaseofutilities.data.mapper.cart
+package com.gabrielgrs1.purchaseofutilities.presentation.mapper
 
 import com.gabrielgrs1.purchaseofutilities.core.plataform.BaseMapper
-import com.gabrielgrs1.purchaseofutilities.data.api.model.response.CartListResponse
-import com.gabrielgrs1.purchaseofutilities.data.api.model.response.CartResponse
-import com.gabrielgrs1.purchaseofutilities.domain.model.CartModel
+import com.gabrielgrs1.purchaseofutilities.domain.model.CartItemModel
+import com.gabrielgrs1.purchaseofutilities.presentation.model.CartItem
 
-object CartMapper : BaseMapper<CartResponse, CartModel>() {
-    override fun transformFrom(s: CartModel): CartResponse =
-        CartResponse(
+object CartItemMapper : BaseMapper<CartItemModel, CartItem>() {
+    override fun transformFrom(s: CartItem): CartItemModel =
+        CartItemModel(
             name = s.name,
             description = s.description,
             imageUrl = s.imageUrl,
@@ -18,8 +17,8 @@ object CartMapper : BaseMapper<CartResponse, CartModel>() {
             tax = s.tax
         )
 
-    override fun transformTo(s: CartResponse): CartModel =
-        CartModel(
+    override fun transformTo(s: CartItemModel): CartItem =
+        CartItem(
             name = s.name,
             description = s.description,
             imageUrl = s.imageUrl,

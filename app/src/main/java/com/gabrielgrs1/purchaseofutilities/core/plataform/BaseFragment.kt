@@ -14,7 +14,7 @@ import java.net.UnknownHostException
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
-    private lateinit var binding: T
+    protected lateinit var binding: T
 
     protected abstract fun getContentLayoutId(): Int
     protected abstract fun init()

@@ -1,8 +1,8 @@
 package com.gabrielgrs1.purchaseofutilities.domain.repository
 
-import com.gabrielgrs1.purchaseofutilities.domain.model.CartListModel
+import com.gabrielgrs1.purchaseofutilities.domain.model.CartItemModel
 import io.reactivex.Observable
 
 interface CartRepository {
-    fun getCart(): Observable<CartListModel>
+    fun getCart(): Observable<List<CartItemModel>>
 }

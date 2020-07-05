@@ -1,8 +1,6 @@
-package com.gabrielgrs1.purchaseofutilities.domain.model
+package com.gabrielgrs1.purchaseofutilities.presentation.model
 
-import java.io.Serializable
-
-data class CartModel(
+class CartItem(
     val name: String,
     val quantity: Int,
     val stock: Int,
@@ -11,4 +9,4 @@ data class CartModel(
     val tax: Double,
     val shipping: Double,
     val description: String
-) : Serializable
+)

@@ -11,8 +11,9 @@ HashMap<String, String> dependencyInjectionDependencies = rootProject.ext.depend
 HashMap<String, String> rxDependencies = rootProject.ext.rxDependencies
 
 android {
-    dataBinding {
-        enabled = true
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
     }
 
     packagingOptions {

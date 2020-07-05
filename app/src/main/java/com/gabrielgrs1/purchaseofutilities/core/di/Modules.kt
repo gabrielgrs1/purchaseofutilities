@@ -6,11 +6,13 @@ import com.gabrielgrs1.purchaseofutilities.data.api.repository.CartRepositoryImp
 import com.gabrielgrs1.purchaseofutilities.domain.repository.CartRepository
 import com.gabrielgrs1.purchaseofutilities.domain.usecase.CartUseCase
 import com.gabrielgrs1.purchaseofutilities.presentation.ui.cart.CartViewModel
+import com.gabrielgrs1.purchaseofutilities.presentation.ui.detail.DetailViewModel
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 val viewModelModule = module {
     viewModel { CartViewModel() }
+    viewModel { DetailViewModel() }
 }
 
 val repositoryModule = module {

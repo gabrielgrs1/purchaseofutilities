@@ -7,6 +7,7 @@ import com.gabrielgrs1.purchaseofutilities.core.plataform.BaseFragment
 import com.gabrielgrs1.purchaseofutilities.core.plataform.fold
 import com.gabrielgrs1.purchaseofutilities.databinding.FragmentCartBinding
 import com.gabrielgrs1.purchaseofutilities.presentation.model.CartItem
+import com.gabrielgrs1.purchaseofutilities.presentation.ui.detail.DetailFragment
 import kotlinx.android.synthetic.main.fragment_cart.cartActivityCartRv
 import kotlinx.android.synthetic.main.fragment_cart.cartActivityQuantityItemsTv
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -38,12 +39,12 @@ class CartFragment : BaseFragment<FragmentCartBinding>(), CartAdapter.CartListen
         binding.lifecycleOwner = this
     }
 
-    override fun onClickItemCart() {
-//        activity?.supportFragmentManager?.beginTransaction()?.replace(
-//            R.id.mainActivityContainerFl,
-//            ItemDetailFragment.newInstance(movieId),
-//            ItemDetailFragment::class.simpleName
-//        )?.addToBackStack(null)?.commit()
+    override fun onClickItemCart(cartItem: CartItem) {
+        activity?.supportFragmentManager?.beginTransaction()?.replace(
+            R.id.mainActivityContainerFl,
+            DetailFragment.newInstance(cartItem),
+            DetailFragment::class.simpleName
+        )?.addToBackStack(null)?.commit()
     }
 
     private fun initRecyclerView() {

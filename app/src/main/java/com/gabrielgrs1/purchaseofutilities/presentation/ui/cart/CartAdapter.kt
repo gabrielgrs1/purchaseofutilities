@@ -8,7 +8,11 @@ import com.bumptech.glide.Glide
 import com.gabrielgrs1.purchaseofutilities.R
 import com.gabrielgrs1.purchaseofutilities.core.extensions.toCurrency
 import com.gabrielgrs1.purchaseofutilities.presentation.model.CartItem
-import kotlinx.android.synthetic.main.item_cart.view.*
+import kotlinx.android.synthetic.main.item_cart.view.itemCartItemNameTv
+import kotlinx.android.synthetic.main.item_cart.view.itemCartItemPictureIv
+import kotlinx.android.synthetic.main.item_cart.view.itemCartItemStockTv
+import kotlinx.android.synthetic.main.item_cart.view.itemCartTopDividerV
+import kotlinx.android.synthetic.main.item_cart.view.itemCartValueTv
 
 class CartAdapter(
     private var cartItemList: List<CartItem>? = null,
@@ -28,13 +32,13 @@ class CartAdapter(
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        cartItemList?.get(position)?.let { holder.bindView(it) }
+        val cartItem = cartItemList?.get(position)
+        cartItem?.let { holder.bindView(it) }
 
         holder.itemView.setOnClickListener {
-            listener.onClickItemCart()
+            cartItem?.let { it1 -> listener.onClickItemCart(it1) }
         }
 
-        //TODO Testar
         if (position == 0) holder.showTopDivider()
     }
 
@@ -78,6 +82,6 @@ class CartAdapter(
     }
 
     interface CartListener {
-        fun onClickItemCart()
+        fun onClickItemCart(cartItem: CartItem)
     }
 }

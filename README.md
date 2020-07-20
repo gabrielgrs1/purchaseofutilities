@@ -1,5 +1,5 @@
 # PurchaseOfUtilites
-Android App using a json for construct a cart at utilites 
+Android App using a service for construct a buy cart at utilites 
 
 # Description
 I decide to use MVVM + Clean architeture to have a greater decoupling of the code, because the clean arch architecture is easily navigable and because it has a much greater facility to add new features both in difficulty and in speed.

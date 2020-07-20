@@ -1,5 +1,7 @@
 package com.gabrielgrs1.purchaseofutilities.presentation.model
 
+import java.io.Serializable
+
 class CartItem(
     val name: String,
     val quantity: Int,
@@ -9,4 +11,4 @@ class CartItem(
     val tax: Double,
     val shipping: Double,
     val description: String
-)
+) : Serializable

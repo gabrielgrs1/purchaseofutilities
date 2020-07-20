@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/itemCartTopDividerV"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/itemCartItemPictureIv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@color/light_gray"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/clock" />
+
+    <TextView
+        android:id="@+id/itemCartItemNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/itemCartItemStockTv"
+        app:layout_constraintStart_toEndOf="@id/itemCartItemPictureIv"
+        app:layout_constraintTop_toTopOf="@id/itemCartItemPictureIv"
+        tools:text="Clock" />
+
+    <TextView
+        android:id="@+id/itemCartItemStockTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/itemCartItemPictureIv"
+        app:layout_constraintStart_toEndOf="@id/itemCartItemPictureIv"
+        app:layout_constraintTop_toBottomOf="@id/itemCartItemNameTv"
+        tools:text="only 1 left in stock" />
+
+    <TextView
+        android:id="@+id/itemCartValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/itemCartItemNameTv"
+        tools:text="$22.00" />
+
+    <View
+        android:id="@+id/itemCartBottomDividerV"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

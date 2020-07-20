@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Purchase of utilities</string>
+
+    <string name="generic_server_down">Serviços temporariamente indisponíveis.</string>
+    <string name="generic_error_toast">Erro</string>
+
+    <string name="quantity_items_cart">%d Items in your cart!</string>
+    <string name="checkout">Checkout</string>
+    <string name="tax">Tax</string>
+    <string name="shipping">Shipping</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="total">Total</string>
 </resources>

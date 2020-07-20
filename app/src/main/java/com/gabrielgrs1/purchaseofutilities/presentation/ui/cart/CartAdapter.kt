@@ -3,6 +3,7 @@ package com.gabrielgrs1.purchaseofutilities.presentation.ui.cart
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gabrielgrs1.purchaseofutilities.R
@@ -51,6 +52,8 @@ class CartAdapter(
         fun bindView(cartItemItem: CartItem) {
             setTextFields(cartItemItem)
             setImage(cartItemItem.imageUrl)
+
+            itemView.itemCartItemPictureIv.transitionName = "transitionImage"
         }
 
         private fun setImage(imageUrl: String?) {

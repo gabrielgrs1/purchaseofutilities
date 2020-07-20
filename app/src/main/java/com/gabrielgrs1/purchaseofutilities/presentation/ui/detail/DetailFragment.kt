@@ -1,11 +1,15 @@
 package com.gabrielgrs1.purchaseofutilities.presentation.ui.detail
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Html
 import com.bumptech.glide.Glide
 import com.gabrielgrs1.purchaseofutilities.R
 import com.gabrielgrs1.purchaseofutilities.core.plataform.BaseFragment
 import com.gabrielgrs1.purchaseofutilities.databinding.FragmentDetailBinding
 import com.gabrielgrs1.purchaseofutilities.presentation.model.CartItem
+import com.gabrielgrs1.purchaseofutilities.presentation.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_detail.detailFragmentPictureIv
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,10 +22,18 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     override fun getContentLayoutId(): Int = R.layout.fragment_detail
 
     override fun init() {
+        setupActionBar()
         getCartItemBundle()
         initBind()
         setCartItem()
         setImage()
+    }
+
+    private fun setupActionBar() {
+        val mainActivity = activity as MainActivity
+        mainActivity.supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFFFFF")))
+        mainActivity.supportActionBar?.title =
+            Html.fromHtml("<font color='#000'>Product Details</font>")
     }
 
     private fun setCartItem() {

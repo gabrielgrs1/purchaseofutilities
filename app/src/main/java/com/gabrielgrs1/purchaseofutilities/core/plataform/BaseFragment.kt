@@ -40,7 +40,7 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
         val message: String = when (error) {
             is UnknownHostException -> getString(R.string.generic_server_down)
-            else -> getString(R.string.generic_server_down)
+            else -> error.message!!
         }
 
         Sneaker.with(this)

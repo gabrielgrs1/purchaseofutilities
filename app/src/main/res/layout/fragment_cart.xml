@@ -10,167 +10,176 @@
             type="com.gabrielgrs1.purchaseofutilities.presentation.ui.cart.CartViewModel" />
     </data>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/default_margin"
+            app:layout_constraintBottom_toTopOf="@+id/cartFragmentCheckoutBt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/cartActivityQuantityItemsTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="@dimen/default_margin"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/quantity_items_cart"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/cartActivityCartRv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cartActivityQuantityItemsTv"
-                tools:itemCount="4"
-                tools:listitem="@layout/item_cart" />
+                <TextView
+                    android:id="@+id/cartActivityQuantityItemsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/quantity_items_cart"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/cartActivityTotalTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="@dimen/default_margin"
-                android:fontFamily="sans-serif"
-                android:text="@string/total"
-                android:textAllCaps="true"
-                app:layout_constraintBottom_toTopOf="@id/cartActivitySubtotalTv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cartActivityCartRv"
-                app:layout_constraintVertical_bias="0.0" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cartActivityCartRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cartActivityQuantityItemsTv"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_cart" />
 
-            <TextView
-                android:id="@+id/cartActivityTotalValueTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:fontFamily="sans-serif"
-                android:text="@{viewModel.totalValueLiveData}"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/cartActivityTotalTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/cartActivityTotalTv"
-                tools:text="$41.24" />
+                <TextView
+                    android:id="@+id/cartActivityTotalTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/total"
+                    android:textAllCaps="true"
+                    app:layout_constraintBottom_toTopOf="@id/cartActivitySubtotalTv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cartActivityCartRv"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/cartActivitySubtotalTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="@dimen/big_margin"
-                android:fontFamily="sans-serif"
-                android:text="@string/subtotal"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cartActivityTotalValueTv" />
+                <TextView
+                    android:id="@+id/cartActivityTotalValueTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@{viewModel.totalValueLiveData}"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cartActivityTotalTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cartActivityTotalTv"
+                    tools:text="$41.24" />
 
-            <TextView
-                android:id="@+id/cartActivitySubtotalValueTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:fontFamily="sans-serif"
-                android:text="@{viewModel.subtotalValueLiveData}"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@id/cartActivitySubtotalTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cartActivitySubtotalTv"
-                tools:text="$36.00" />
+                <TextView
+                    android:id="@+id/cartActivitySubtotalTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/subtotal"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cartActivityTotalValueTv" />
 
-            <TextView
-                android:id="@+id/cartActivityShippingTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/shipping"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cartActivitySubtotalTv" />
+                <TextView
+                    android:id="@+id/cartActivitySubtotalValueTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@{viewModel.subtotalValueLiveData}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/cartActivitySubtotalTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cartActivitySubtotalTv"
+                    tools:text="$36.00" />
 
-            <TextView
-                android:id="@+id/cartActivityShippingValueTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:fontFamily="sans-serif"
-                android:text="@{viewModel.shippingLiveData}"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@id/cartActivityShippingTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cartActivityShippingTv"
-                tools:text="$2.00" />
+                <TextView
+                    android:id="@+id/cartActivityShippingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/shipping"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cartActivitySubtotalTv" />
 
-            <TextView
-                android:id="@+id/cartActivityTaxTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/tax"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cartActivityShippingTv" />
+                <TextView
+                    android:id="@+id/cartActivityShippingValueTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@{viewModel.shippingLiveData}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/cartActivityShippingTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cartActivityShippingTv"
+                    tools:text="$2.00" />
 
-            <TextView
-                android:id="@+id/cartActivityTaxValueTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:fontFamily="sans-serif"
-                android:text="@{viewModel.taxLiveData}"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@id/cartActivityTaxTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cartActivityTaxTv"
-                tools:text="$3.24" />
+                <TextView
+                    android:id="@+id/cartActivityTaxTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/tax"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cartActivityShippingTv" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:background="@drawable/purple_rounded_button"
-                android:fontFamily="sans-serif"
-                android:letterSpacing="0.08"
-                android:text="@string/checkout"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cartActivityTaxTv"
-                app:layout_constraintVertical_bias="1.0" />
+                <TextView
+                    android:id="@+id/cartActivityTaxValueTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:fontFamily="sans-serif"
+                    android:text="@{viewModel.taxLiveData}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/cartActivityTaxTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cartActivityTaxTv"
+                    tools:text="$3.24" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/cartFragmentCheckoutBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:background="@drawable/purple_rounded_button"
+            android:letterSpacing="0.08"
+            android:text="@string/checkout"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
